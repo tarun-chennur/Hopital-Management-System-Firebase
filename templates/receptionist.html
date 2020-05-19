@@ -1,0 +1,120 @@
+{% load static%}
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <form action="/logout/" method="post">
+		{% csrf_token %}
+  <div class="row">
+    <div class="col-lg-12">
+        <h3 class="one"></h3>
+         <a class="btn btn-danger btn-lg" style="float:right; margin-right:100px;" href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+  </form>
+	
+</head>
+<body style="background-image:url('{% static 'loginim.jpg' %}');"></body>
+ <nav class="navbar navbar-default" style="padding-top:5px;padding-bottom:5px;max-height:30px;">
+       <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img style="float:left;width:150px;height:150px;position:relative;"  src="{% static 'head.png' %}"/>
+				</a>
+			</div>
+			
+		</div>
+	</nav>
+	   <div class="container">
+
+    <form class="well form-horizontal" action="/sendpatdata/" method="post">
+      {% csrf_token %} 
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Patient Details</b></h2></center></legend><br>
+<!-- Text input-->
+
+<div class="form-group">
+  <label >Patient email</label>  
+  <input  name="patemail" placeholder="Enter Patient EmailID" autocomplete= "off" class="form-control"  type="text">
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label >Patient password</label>  
+  <input  name="patpass" placeholder="Enter Patient Password" autocomplete= "off" class="form-control"  type="text">
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label >Patient ID</label>  
+  <input  name="patid" placeholder="Enter Patient ID" class="form-control" autocomplete= "off" type="text">
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label>Patient Name</label> 
+  <input name="patname" placeholder="Enter Patient Name" class="form-control" autocomplete= "off" type="text">
+ </div>
+
+<div class="form-group"> 
+  <label >DOB</label>
+  <input name="patdob" placeholder="Enter Date Of Birth" class="form-control" autocomplete= "off" type="text">
+
+</div>
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label>Age</label>  
+  <input  name="patage" placeholder="Enter Age" class="form-control" autocomplete= "off" type="text">
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+    <label>Height</label>  
+    <input  name="patht" placeholder="Enter Height " class="form-control" autocomplete= "off" type="text">
+  </div>
+  <!-- Text input-->
+
+<div class="form-group">
+    <label>Weight</label>  
+    <input  name="patwt" placeholder="Enter Weight" class="form-control" autocomplete= "off" type="text">
+  </div>
+  <!-- Text input-->
+
+<div class="form-group">
+    <label>Blood Group</label>  
+    <input  name="patbg" placeholder="Enter Blood Group" class="form-control" autocomplete= "off" type="text">
+  </div>
+  <!-- Text input-->
+
+<div class="form-group">
+    <label>Reason For Visit</label>  
+    <input  name="patrfv" placeholder="Enter Your Reason For Visiting Us" class="form-control" autocomplete= "off" type="text">
+  </div>
+<div class="form-group">
+  <label></label>
+  <div><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+</body>
+</html>
+		

@@ -1,0 +1,132 @@
+{% load static%}
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <form action="/logout/" method="post">
+			{% csrf_token %}
+	  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="one"></h3>
+			<a class="btn btn-danger btn-lg" style="float:right; margin-right:100px;" href="{% url 'logout' %}">Logout</a>
+		</div>
+	</div>
+	  </form>
+
+</head>
+<body style="background-image:url('{% static 'loginim.jpg' %}');">
+ <nav class="navbar navbar-default" style="padding-top:5px;padding-bottom:5px;max-height:30px;">
+       <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img style="float:left;width:150px;height:150px;position:relative;" src="{% static 'head.png' %}"/>
+				</a>
+			</div>
+			
+		</div>
+	</nav>
+	   <div class="container">
+
+    
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2 style="color:white;"><b>Patient Details</b></h2></center></legend><br>
+
+
+
+
+
+     <div class="container">
+      <table class="table table-striped table-dark">
+       <tr>
+          <th scope="col">Patient ID</th> 
+                       
+          <th scope="col">Patient Name</th>
+          <th scope="col">Patient DOB</th>              
+          <th scope="col">Patient Age</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Blood Group</th>
+          <th scope="col">     Reason of visit     </th>
+        </tr>
+                         
+      
+        <tbody>
+        <tr>
+          <td scope="col">{{id}}</td>
+          <td scope="col">{{pname}} </td>
+          <td scope="col">{{pdob}} </td>
+          <td scope="col">{{page}} </td>
+          <td scope="col">{{pht}} </td>
+          <td scope="col">{{pwt}} </td>
+          <td scope="col">{{pbg}} </td>
+          <td scope="col">{{pr}} </td> 
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+
+        <form class="well form-horizontal" action="/finaldoc/" method="post">
+          {% csrf_token %} 
+    <fieldset>
+    
+    <!-- Form Name -->
+    <legend><center><h2><b>Enter Details:</b></h2></center></legend><br>
+    <!-- Text input-->
+    
+    
+    <!-- Text input-->
+    <div class="form-group">
+        
+        <input  name="patid"  class="form-control" value="{{id}}" type="hidden">
+      </div>
+    
+    <div class="form-group">
+      <label>diagnosis</label>  
+      <input  name="diagnosis" placeholder="Enter The Diagnosis" class="form-control" autocomplete= "off" type="text">
+    </div>
+    
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label >prescription</label>  
+      <input  name="prescription" placeholder="Enter Prescription" class="form-control" autocomplete= "off" type="text">
+    </div>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label>tests</label> 
+      <input name="tests" placeholder="Enter Tests To Be Performed" class="form-control" autocomplete= "off" type="text">
+     </div>
+    
+   
+    <div class="form-group">
+      <label></label>
+      <div><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    </div>
+
+
+
+</fieldset>
+</div>
+</body>
+</html>

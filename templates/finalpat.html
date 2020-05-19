@@ -1,0 +1,89 @@
+{% load static%}
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <form action="/logout/" method="post">
+			{% csrf_token %}
+	  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="one"></h3>
+			<a class="btn btn-danger btn-lg" style="float:right; margin-right:100px;" href="{% url 'logout' %}">Logout</a>
+		</div>
+	</div>
+	  </form>
+
+</head>
+<body style="background-image:url('{% static 'loginim.jpg' %}');">
+ <nav class="navbar navbar-default" style="padding-top:5px;padding-bottom:5px;max-height:30px;">
+       <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img style="float:left;width:150px;height:150px;position:relative;" src="{% static 'head.png' %}"/>
+				</a>
+			</div>
+			
+		</div>
+	</nav>
+	   <div class="container">
+
+    
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2 style="color:white;"><b>Patient Details</b></h2></center></legend><br>
+
+
+
+<h1 style="color:white;">PATIENT ID: {{pid}}</h1><br>
+<h1 style="color:white;">PATIENT NAME: {{pname}}</h1><br>
+<h1 style="color:white;">PATIENT REASON: {{preason}}</h1><br>
+
+
+     <div class="container">
+      <table class="table table-striped table-dark">
+       <tr>
+          
+                       
+          <th scope="col">Doctor ID</th>
+          <th scope="col">Diagnosis</th>              
+          <th scope="col">Tests</th>
+          <th scope="col">Prescription Provided</th>
+         
+        </tr>
+                         
+      
+        <tbody>
+            {% for docid,diag,tests,pres in co %}
+        <tr>
+          <td scope="col">{{docid}}</td>
+          <td scope="col">{{diag}} </td>
+          <td scope="col">{{tests}} </td>
+          <td scope="col">{{pres}} </td>
+        </tr>       
+           {% endfor %}
+        
+        </tbody>
+      </table>
+    </div>
+
+    
+    
+    </fieldset>
+   
+    </div>
+
+
+
+</fieldset>
+</div>
+</body>
+</html>

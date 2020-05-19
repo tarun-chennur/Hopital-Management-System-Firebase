@@ -1,0 +1,71 @@
+{% load static%}
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<style>
+			.button{
+				width:300px;
+			}
+			.button:hover {
+                 background-color: #4CAF50; /* Green */
+                 color: white;
+                }
+		    .button {
+                 transition-duration: 0.4s;
+                }
+			footer{
+					 clear: both;
+                     height: 200px;
+					 margin-top: 200px;
+					 position:absolute;
+					 }
+			.navbar{
+					padding-top:0px;
+					padding-bottom:0px;
+					height:70px;
+					
+					}
+}
+		</style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<form action="/logout/" method="post">
+			{% csrf_token %}
+	  <div class="row">
+		<div class="col-lg-12">
+			<h3 class="one"></h3>
+			<a class="btn btn-danger btn-lg" style="float:right; margin-right:100px;" href="{% url 'logout' %}">Logout</a>
+		</div>
+	</div>
+	  </form>
+	</head>
+	<body style="background-image:url('{% static 'loginim.jpg' %}');"></body>
+		<nav class="navbar navbar-default" >
+       <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img style="float:left;width:140px;height:140px;position:relative;margin-top:30px;" src="{% static 'head.png' %}"/>
+				</a>
+			</div>
+			<ul class="navbar navbar-nav" style="list-style-type:none">
+				<li style="font-family:  Arial, Helvetica, sans-serif;text-align:center;font-size:50;">Welcome</li>
+			</ul>
+		</div>
+	</nav>
+		
+		<div style="display:inline" class="buttons" align="center">
+			<p class="buttons">
+				
+				<a class="btn btn-primary btn-lg" name="patshow" href="{% url 'patshow' %}">View Patient Details</a>
+				
+			</p>
+	    </div>
+				
+			
+		

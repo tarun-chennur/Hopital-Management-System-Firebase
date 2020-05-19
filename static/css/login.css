@@ -1,0 +1,68 @@
+.navbar{
+	padding-top:5px;
+	padding-bottom:5px;
+	height:30px;
+}
+
+
+
+	.form-3 {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 300px;
+    position: relative;
+    margin: 10% auto 10%;
+    padding: 50px;
+    overflow: hidden;
+
+    /* Styles */
+    background: #fff; 
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08), 
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+.form-3 input[type=text],
+.form-3 input[type=password], .form-3 select{
+    /* Size and position */
+    width: 50%;
+    float: right;
+    padding: 5px 2px;
+    margin-bottom: 3px;
+    font-size: 10px;
+	
+
+    /* Styles */
+    background: #000000;    
+    border: 1px solid #000;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+
+}
+.form-3 input[type=checkbox] {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.form-3 label[for=login],.form-3 label[for=pass],.form-3 label[for=remember],.form-3 label[for=user]{
+		font-size:14px;
+		font-weight:700;
+		margin-top:3px;
+		padding:5px 2px;
+}
+.form-3 input[type=submit]{
+	box-shadow: 0 1px 0;
+	border-radius:3px;
+	background:#000000;
+	color:#fff;
+}
+
+
+
+	
